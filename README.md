@@ -1,10 +1,66 @@
-# Data analysis
-- Document here the project: wall-e_scanner
-- Description: Project Description
-- Data Source:
-- Type of analysis:
+# Wall-E Scanner
+### Garbage Object Detection and Classification
+Using python machine learning to perform image frame object detection from a video feed to detect and classify different recycling categories of trash.
 
-Please document the project the better you can.
+## Motivation
+One of the most important ways to combat climate change is with recycling
+-	World generates 2.01 billion tonnes of municipal solid waste annually.
+-	At least 33 percent of that—not managed in an environmentally safe manner. 
+- 	Worldwide, waste generated per person per day averages 0.74 kilogram but ranges widely, from 0.11 to 4.54 kilograms.
+
+## Possible use Case
+Possible use cases of a machine learning model like this would be a recycling centre conveyor belt, or potentially a Wall-E Style trash collecting robot that could sort it into recycling bins.
+
+![image](https://user-images.githubusercontent.com/100606725/189529054-71fdbbc0-e986-4d43-ab58-1c44182ead88.png)
+
+# Project Setup
+1.	Object Detection with Tensorflow API
+2.	Custom classification training on Trash Datasets
+3.	Java Script and React web cam user interface
+
+# Data Source 
+-Trash Annotations in Context (TACO) 
+http://tacodataset.org/
+
+![image](https://user-images.githubusercontent.com/100606725/189529061-8a575245-b4c8-43ea-85b4-bf8ddbae65c7.png)
+
+@article{taco2020,
+    title={TACO: Trash Annotations in Context for Litter Detection},
+    author={Pedro F Proença and Pedro Simões},
+    journal={arXiv preprint arXiv:2003.06975},
+    year={2020}
+}
+
+- Kaggle Drinking Waste Classification
+https://www.kaggle.com/datasets/arkadiyhacks/drinking-waste-classification
+
+![image](https://user-images.githubusercontent.com/100606725/189529069-51f74e1d-18f0-41cf-bc36-6a15f88428a5.png)
+
+# Data Preprocessing 
+Uploaded TACO and Drinking Set data with pre-made annotations to Roboflow, which was then used to create TF Records and CSV.  Able to rename to 7 recycling categories 
+1.	Plastic 
+2.	Paper 
+3.	Metal 
+4.	Glass
+5.	Organic
+6.	Other 
+7.	Non-recyclable 
+
+# Object Detection with Tensorflow API
+We used transfer learning from the Tensorflow API version 2.8.2 to get the basis of object detection. 
+
+# Custom classification training on Trash Datasets
+Follow the steps in notebook:  Wall_E_Scanner_Model_2.ipynb
+
+We trained MobileNet v2 model for the best accuracy and speed. 
+
+We tried Yolo v4 as a base, with good modeling results, however was not able to successfully engineer the model into the java script react video feed frame.
+
+# Java Script and React web cam user interface
+Follow the steps in notebook:  Wall_E_Scanner_Model_2.ipynb
+
+The code was hosted on google cloud platform.  We hooked a smartphone camera to be the webcam to use as a video feed. 
+
 
 # Startup the project
 
